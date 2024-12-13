@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "date": "2023-12-25T10:00:00+01:00",
+    "timeSlot": "10:00-11:00",
+    "eventName": "Christmas Event",
+    "user": {
+      "id": 1,
+      "email": "user@example.com",
+      "userIdentifier": "user@example.com",
+      "roles": ["ROLE_USER"],
+      "password": "$2y$10$FCKMrVcObCVFVCNCItsF/O/0Yzf8o3URb6lq6f//e3rh9u0F1IyTm",
+      "name": "John Doe",
+      "phoneNumber": "1234567890",
+      "salt": null
+    }
+  }
+]

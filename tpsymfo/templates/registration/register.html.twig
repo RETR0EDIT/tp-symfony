@@ -1,0 +1,11 @@
+{# filepath: /c:/Users/admin/Desktop/tp symfony/tpsymfo/templates/registration/register.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Inscription</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_widget(registrationForm) }}
+        <button class="btn">S'inscrire</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}

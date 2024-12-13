@@ -1,19 +1,13 @@
-{# filepath: /c:/Users/admin/Desktop/tp symfony/tpsymfo/templates/reservation/index.html.twig #}
+{# filepath: /c:/Users/admin/Desktop/tp symfony/tpsymfo/templates/reservation/all.html.twig #}
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Mes Réservations</h1>
-
-    <div>
-        <h2>Informations Utilisateur</h2>
-        <p><strong>Nom :</strong> {{ user.name }}</p>
-        <p><strong>Email :</strong> {{ user.email }}</p>
-        <p><strong>Numéro de téléphone :</strong> {{ user.phoneNumber }}</p>
-    </div>
+    <h1>Toutes les Réservations</h1>
 
     <table>
         <thead>
             <tr>
+                <th>Utilisateur</th>
                 <th>Date</th>
                 <th>Heure</th>
                 <th>Événement</th>
@@ -22,6 +16,7 @@
         <tbody>
             {% for reservation in reservations %}
                 <tr>
+                    <td>{{ reservation.user.email }}</td>
                     <td>{{ reservation.date|date('Y-m-d H:i') }}</td>
                     <td>{{ reservation.timeSlot }}</td>
                     <td>{{ reservation.eventName }}</td>
@@ -29,6 +24,4 @@
             {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_reservation_new') }}">Nouvelle Réservation</a>
 {% endblock %}

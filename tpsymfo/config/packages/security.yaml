@@ -17,13 +17,18 @@ security:
     main:
       lazy: true
       provider: app_user_provider
-      custom_authenticators:
-        - App\Security\JsonLoginAuthenticator
+      form_login:
+        login_path: app_login
+        check_path: app_login
+        default_target_path: app_reservation
+        username_parameter: _email
+        password_parameter: _password
       logout:
         path: app_logout
 
   access_control:
     - { path: ^/admin, roles: ROLE_ADMIN }
     - { path: ^/user, roles: ROLE_USER }
-    - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/admin/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/login }
+    - { path: ^/register }
+    - { path: ^/reservation, roles: ROLE_USER }

@@ -1,0 +1,22 @@
+{# filepath: /c:/Users/admin/Desktop/tp symfony/tpsymfo/templates/reservation/new.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Nouvelle Réservation</h1>
+
+    <form method="post">
+        <div>
+            <label for="date">Date</label>
+            <input type="datetime-local" id="date" name="date" required>
+        </div>
+        <div>
+            <label for="timeSlot">Heure</label>
+            <input type="text" id="timeSlot" name="timeSlot" required>
+        </div>
+        <div>
+            <label for="eventName">Événement</label>
+            <input type="text" id="eventName" name="eventName" required>
+        </div>
+        <button type="submit">Réserver</button>
+    </form>
+{% endblock %}

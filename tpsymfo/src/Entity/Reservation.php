@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-namespace App\Entity;
-
 use App\Repository\ReservationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -33,7 +31,7 @@ class Reservation
     private ?string $eventName = null;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'reservations')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: false, name: 'user_id', referencedColumnName: 'id')]
     private ?User $user = null;
 
     public function getId(): ?int
@@ -46,7 +44,7 @@ class Reservation
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
 
@@ -58,7 +56,7 @@ class Reservation
         return $this->timeSlot;
     }
 
-    public function setTimeSlot(string $timeSlot): static
+    public function setTimeSlot(string $timeSlot): self
     {
         $this->timeSlot = $timeSlot;
 
@@ -70,7 +68,7 @@ class Reservation
         return $this->eventName;
     }
 
-    public function setEventName(string $eventName): static
+    public function setEventName(string $eventName): self
     {
         $this->eventName = $eventName;
 
@@ -82,7 +80,7 @@ class Reservation
         return $this->user;
     }
 
-    public function setUser(?User $user): static
+    public function setUser(?User $user): self
     {
         $this->user = $user;
 

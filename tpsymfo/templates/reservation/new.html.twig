@@ -1,0 +1,11 @@
+{# filepath: /c:/Users/admin/Desktop/tp symfony/tpsymfo/templates/reservation/new.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Nouvelle Réservation</h1>
+
+    {{ form_start(reservationForm) }}
+        {{ form_widget(reservationForm) }}
+        <button class="btn">Réserver</button>
+    {{ form_end(reservationForm) }}
+{% endblock %}
