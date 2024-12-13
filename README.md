@@ -14,8 +14,9 @@ Ce projet Symfony permet d'importer des réservations à partir d'un fichier JSO
 1. Clonez le dépôt :
 
    ```sh
-   git clone https://github.com/votre-utilisateur/votre-repo.git
-   cd votre-repo
+   git clone https://github.com/votre-utilisateur/tp-symfony.git
+   cd tp-symfony
+
    ```
 
 2. Installez les dépendances :
